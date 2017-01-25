@@ -31,7 +31,7 @@ main()
     }
     
     newtime = clock();
-    cout << "newTime "<<newtime << " Oldtime "<<oldtime<<endl;
+    
     seconds = (double)(newtime-oldtime)/CLOCKS_PER_SEC;
     cout << "O(n) search took "<<seconds<<endl;
     
@@ -48,7 +48,7 @@ main()
     }
     
     newtime = clock();
-    cout << "newTime "<<newtime << " Oldtime "<<oldtime<<endl;
+    
     seconds = (double)(newtime-oldtime)/CLOCKS_PER_SEC;
     cout << "O(nlogn) search took "<<seconds<<endl;
     
@@ -64,7 +64,7 @@ main()
     }
     
     newtime = clock();
-    cout << "newTime "<<newtime << " Oldtime "<<oldtime<<endl;
+    
     seconds = (double)(newtime-oldtime)/CLOCKS_PER_SEC;
     cout << "n^2 took "<<seconds<<endl;
     // Now try an O(n^2-n) Algorithm to determine if values are unique
@@ -78,9 +78,24 @@ main()
         }
     }
     
-    cout << "newTime "<<newtime << " Oldtime "<<oldtime<<endl;
     newtime = clock();
     seconds = (double)(newtime-oldtime)/CLOCKS_PER_SEC;
     cout << "n^2-n took "<<seconds<<endl;
+    
+    notUnique = 0;
+    oldtime = clock(); 
+    for(int k = 0; k < n; k++) {
+      for(int j = 0; j < n; j++) {
+        for(int i = j; i < n; i++) {
+            if(bigarray[i] == bigarray[j]) {
+                notUnique++;
+            }
+        }
+      }
+    }
+    
+    newtime = clock();
+    seconds = (double)(newtime-oldtime)/CLOCKS_PER_SEC;
+    cout << "n^3 took "<<seconds<<endl;
     
 }
