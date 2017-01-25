@@ -57,3 +57,4 @@ Finally, you can see and O(n^3) algorithm is much worse than the O(n^2)
       }
     }
 ```
+Try this program for values from 100 to 40000 to get a feel for how the complexity of an algorithm impacts run time.
